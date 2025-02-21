@@ -5,7 +5,14 @@
 export function getPlanetNamesWithMassValue({
   planets,
   greaterThanOrEqualTo,
-}) {}
+}: {
+  planets: { name: string; mass: { massValue: number } }[];
+  greaterThanOrEqualTo: number;
+}): string[] {
+  return planets
+    .filter(({ mass }) => mass.massValue >= greaterThanOrEqualTo)
+    .map(({ name }) => name);
+}
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-5"
