@@ -4,7 +4,7 @@
 
 export function getPlanetNamesWithLowGravity(
   planets: { name: string; gravity: number }[]
-) {
+): string[] {
   return planets
     .filter((planet) => planet.gravity < 10)
     .map((planet) => planet.name);

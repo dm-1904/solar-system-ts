@@ -7,7 +7,7 @@ export function findPlanetByMoon({
 }: {
   planets: { name: string; moons?: string[] }[];
   moonName: string;
-}): { name: string } | undefined {
+}): { name: string; moons?: string[] } | undefined {
   return planets.find((planet) =>
     planet.moons?.some((moon) => moon.toLowerCase() === moonName.toLowerCase())
   );

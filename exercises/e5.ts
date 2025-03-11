@@ -10,8 +10,8 @@ export function getPlanetNamesWithMassValue({
   greaterThanOrEqualTo: number;
 }): string[] {
   return planets
-    .filter(({ mass }) => mass.massValue >= greaterThanOrEqualTo)
-    .map(({ name }) => name);
+    .filter((planet) => planet.mass.massValue >= greaterThanOrEqualTo)
+    .map((planet) => planet.name);
 }
 
 // === TEST YOURSELF ===
