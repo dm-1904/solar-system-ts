@@ -6,20 +6,16 @@
 export function getGreatestDiscoveryYear(
   asteroids: { discoveryYear: number }[]
 ): number {
-  // Create a Map to count the number of discoveries per year.
   const yearCounts = new Map<number, number>();
 
-  // Iterate over each asteroid and count occurrences of each discovery year.
   for (const asteroid of asteroids) {
     const year = asteroid.discoveryYear;
     yearCounts.set(year, (yearCounts.get(year) || 0) + 1);
   }
 
-  // Initialize variables to track the year with the highest count.
   let maxYear = 0;
   let maxCount = 0;
 
-  // Iterate through the Map entries to find the year with the greatest number of discoveries.
   for (const [year, count] of yearCounts.entries()) {
     if (count > maxCount) {
       maxCount = count;
